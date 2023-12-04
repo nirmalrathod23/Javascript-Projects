@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color </title>
+</head>
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        margin-top: 20%;
+       
+    }
+    .box{
+        padding: 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        border: 1px solid aqua;
+    }
+    #yellow{
+        background-color: yellow;
+        color: black;
+    }
+    #red{
+        background-color: red;
+    }
+    #green{
+        background-color: green;
+    }
+    #blue{
+        background-color: blue;
+    }
+</style>
+<body>
+    <div class="container">
+        <button class="box" id="yellow">Yellow</button>
+        <button class="box" id="red">red</button>
+        <button class="box" id="green">green</button>
+        <button class="box" id="blue">blue</button>
+    </div>
+
+    <script>
+        const btn = document.querySelectorAll(".box")
+        const body = document.querySelector("body")
+
+        body.addEventListener("click", function(e){
+            if(e.target.id === "yellow"){
+                body.style.backgroundColor = e.target.id
+            }else if(e.target.id === "red"){
+                body.style.backgroundColor = e.target.id
+            }else if(e.target.id === "green"){
+                body.style.backgroundColor = e.target.id
+            }
+            else if(e.target.id === "blue"){
+                body.style.backgroundColor = e.target.id
+            }
+        })
+
+
+    </script>
+</body>
+</html>
