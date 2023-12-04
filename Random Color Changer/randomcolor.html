@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random color changer</title>
+</head>
+<style>
+    .container{
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 10px;
+
+
+    }
+    .box{
+        padding: 100px;
+        border-radius: 20px;
+        background-color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <p id="hash"></p>
+        </div>
+        <button id="gen">generate</button>
+        <script>
+
+            gen.addEventListener("click", function(setBg){
+                const randomColor = Math.floor(Math.random()* 16777215).toString(16);
+                document.body.style.backgroundColor = "#" + randomColor;
+                hash.innerHTML = "#" + randomColor;
+                hash.style.color = "#" + randomColor;
+                
+            })
+
+
+        </script>
+
+    </div>
+</body>
+
+</html>
