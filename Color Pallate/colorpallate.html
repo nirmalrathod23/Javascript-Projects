@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Pallete</title>
+</head>
+<style>
+    .text-center{
+        text-align: center;
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .color{
+        padding: 200px 60px;
+        font-weight: 700;
+        
+    }
+    span{
+        color: black;
+        background-color: white;
+        padding: 10px 20px;
+    }
+    #generate{
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="container text-center">
+        <h1>color pallete</h1>
+        <div class="color-pallete flex">
+            <div class="color"><span>Generate</span></div>
+            <div class="color"><span>Generate</span></div>
+            <div class="color"><span>Generate</span></div>
+            <div class="color"><span>Generate</span></div>
+            <div class="color"><span>Generate</span></div>
+        </div>
+        <button id="generate">Generate Pallete</button>
+    </div>
+
+    <script>
+        const generate = document.querySelector("#generate")
+        const colors = document.querySelectorAll(".color")
+        
+        const colorObject ={
+            1: ["#75DDDD", "#508991", "#172A3A", "#172A3A","#09BC8A"],
+            2: ["#F1E4E8", "#E2DCDE", "#CEB1BE", "#B97375","#2D2D34"],
+            3: ["#E8D7F1", "#D3BCCC", "#A167A5", "#4A306D","#0E273C"],
+            4: ["#CCC9A1", "#F0FFCE", "#A53F2B", "#4C230A","#280004"],
+            5: ["#A31621", "#BFDBF7", "#053C5E", "#1F7A8C","#DB222A"],
+            6: ["#A2666F", "#F49390", "#F45866", "#C45AB3","#631A86"],
+            7: ["#B5D6B2", "#53131E", "#5A464C", "#FFFACC","#FFEFBD"],
+            8: ["#CBE896", "#AAC0AA", "#FCDFA6", "#A18276","#F4B886"],
+            9: ["#EA526F", "#070600", "#F7F7FF", "#23B5D3","#279AF1"],
+            10: ["#E2F1AF", "#E3D888", "#84714F", "#5A3A31","#31231E"],
+        } 
+        generate.addEventListener("click", () => {
+            const randomPallateNew = Math.floor(Math.random() * 10)
+            const randomPallate = colorObject[randomPallateNew + 1]
+
+            colors.forEach(( color, colorIndex) =>{
+                const randomColor = randomPallate[colorIndex % randomPallate.length]
+                color.style.background = randomColor
+                color.querySelector("span").innerHTML = randomColor
+                console.log(randomPallate.length)
+            })
+        })
+        
+
+    </script>
+</body>
+</html>
