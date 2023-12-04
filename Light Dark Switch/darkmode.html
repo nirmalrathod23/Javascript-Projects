@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-Dark Switcher</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        margin-top: 10%;
+        background-color: white;
+        color: black;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 20px;
+        border: none;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <button id="light" class="btn">Dark</button>
+
+    <h1>Let's try Mode Switcher</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias neque iusto nihil quaerat optio et, voluptatibus
+        obcaecati corporis placeat eveniet libero, totam minima ab numquam adipisci, accusantium reiciendis!
+        Accusantium, commodi!</p>
+
+    <script>
+        let body = document.querySelector("body")
+        let btn = document.querySelector(".btn")
+        
+        btn.addEventListener('click', (e) => {
+            if(e.target.id === "light"){
+                body.style.backgroundColor = "#000"
+                body.style.color = "#fff"
+                btn.style.color = "#000"
+                btn.style.backgroundColor = "#fff"
+                btn.innerHTML = "Light"
+                btn.setAttribute("id", "dark")
+            }
+            else{
+                body.style.backgroundColor = "#fff"
+                body.style.color = "#000"
+                btn.style.color = "#fff"
+                btn.style.backgroundColor = "#000"
+                btn.innerHTML = "Dark"
+                btn.setAttribute("id", "light")
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
